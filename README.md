@@ -6,7 +6,7 @@ Developer tools (5 of them) The five tools are:
 	4	Commit Message and Changelog Writer. Turns the staged changes into a clear commit message that follows a team’s convention, and builds release notes from commits since the last tag. It is quick to adopt, and most developers would use it daily.
 	5	Local Developer Environment Doctor. Checks a machine for the right Python or Node version, required tools, environment variables, and ports already in use, then explains how to fix each problem. Setting up a project on a new laptop, especially on Windows, is a frequent source of wasted hours.
 
-  Things to check on your side
+  Things to check:
 	•	Dependency Triage’s live lookup was not tested. This environment has no internet access, so the tests use a fake database. Run it once on a machine with internet to confirm.
 	•	Windows and macOS were not tested directly. The code uses only standard Python libraries, and the commands are written for both systems, but please run each tool once on each system.
 	•	The PR Reviewer and Commit Writer use simple rules. They catch common cases well, but they do not understand your code’s design. Their READMEs say so.
