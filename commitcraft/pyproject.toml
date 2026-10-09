@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "commitcraft"
+version = "1.0.0"
+description = "Write Conventional Commit messages from staged changes, and build changelogs from git history."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+commitcraft = "commitcraft.cli:main"
+
+[tool.setuptools]
+packages = ["commitcraft"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

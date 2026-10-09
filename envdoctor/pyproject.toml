@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "envdoctor"
+version = "1.0.0"
+description = "Check that a Windows, macOS or Linux computer is ready to work on a project, and say how to fix what is missing."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+envdoctor = "envdoctor.cli:main"
+
+[tool.setuptools]
+packages = ["envdoctor"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

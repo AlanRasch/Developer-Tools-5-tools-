@@ -1,0 +1,27 @@
+diff --git a/app/payments.py b/app/payments.py
+index 1111111..2222222 100644
+--- a/app/payments.py
++++ b/app/payments.py
+@@ -10,9 +10,12 @@ def charge(customer, amount):
+-    try:
+-        gateway.charge(customer, amount)
+-    except GatewayError as exc:
+-        log.error("charge failed: %s", exc)
+-        raise
++    API_KEY = "sk_live_123456789"
++    query = "SELECT * FROM orders WHERE id = " + str(order_id)
++    try:
++        gateway.charge(customer, amount, key=API_KEY)
++    except:
++        pass
++    # TODO: handle refunds
++    breakpoint()
+diff --git a/app/utils.py b/app/utils.py
+index 3333333..4444444 100644
+--- a/app/utils.py
++++ b/app/utils.py
+@@ -1,2 +1,3 @@
+ def load(expr):
+-    return expr
++    return eval(expr)
++
